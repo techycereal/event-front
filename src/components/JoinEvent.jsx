@@ -8,7 +8,7 @@ const JoinEvent = () => {
   useEffect(() => {
     const getEvents = async () => {
       try {
-        const query = await axios.get(`${BASE_URL}/api/database/all-events`);
+        const query = await axios.get(`${process.env.BASE_URL}/api/database/all-events`);
         console.log(query.data);
         setEvents(query.data);
       } catch (error) {
