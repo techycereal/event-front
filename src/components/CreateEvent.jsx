@@ -59,7 +59,7 @@ const CreateEvent = () => {
         formData.append('image', file);
       }
 
-      const response = await axios.post(`${process.env.BASE_URL}/api/google/create-event`, formData, {
+      const response = await axios.post(`https://event-system.azurewebsites.net/api/google/create-event`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
