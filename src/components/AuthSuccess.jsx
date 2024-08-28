@@ -6,6 +6,7 @@ const AuthSuccess = () => {
 
   useEffect(() => {
     // Get the token from the URL
+    console.log('here')
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get('token');
     console.log(token)
