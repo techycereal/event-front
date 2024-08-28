@@ -11,9 +11,7 @@ const CreateEvent = () => {
     endDate: '',
     endTime: '',
     timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    attendees: [
-      { email: 'alexanderjmilliken@gmail.com' },
-    ],
+    attendees: [],
   });
 
   const [file, setFile] = useState(null);
