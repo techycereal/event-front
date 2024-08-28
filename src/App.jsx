@@ -1,6 +1,4 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import GoogleAuth from './components/GoogleAuth'; // Replace with your component
 import AuthSuccess from './components/AuthSuccess';
 import CreateEvent from './components/CreateEvent';
 import JoinEvent from './components/JoinEvent';
