@@ -11,7 +11,7 @@ export default function Header() {
 
   const handleAuth = async () => {
     try {
-      const response = await axios.get(`https://event-system.azurewebsites.net/api/google/google-auth`);
+      const response = await axios.get(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/google/google-auth`);
       window.location.href = response.data.url; // Redirect user to Google auth URL
     } catch (error) {
       console.error('Error generating auth URL', error);
