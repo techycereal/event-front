@@ -4,7 +4,7 @@ import axios from 'axios';
 const GoogleAuth = () => {
   const handleAuth = async () => {
     try {
-      const response = await axios.get(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/google/google-auth`);
+      const response = await axios.get(`http://localhost:3000/api/google/google-auth`);
       window.location.href = response.data.url; // Redirect user to Google auth URL
     } catch (error) {
       console.error('Error generating auth URL', error);

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { useSelector, useDispatch } from 'react-redux';
 const CreateEvent = () => {
   const [event, setEvent] = useState({
     summary: '',
@@ -13,6 +13,13 @@ const CreateEvent = () => {
     timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     attendees: [],
   });
+  const authValue = useSelector((state) => state.auth.isAuthenticated);
+
+  useEffect(() => {
+    if (authValue == false) {
+      window.location.pathname = '/'
+    }
+  }, [authValue])
 
   const [file, setFile] = useState(null);
 
@@ -57,7 +64,7 @@ const CreateEvent = () => {
         formData.append('image', file);
       }
 
-      const response = await axios.post(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/google/create-event`, formData, {
+      const response = await axios.post(`http://localhost:3000/api/google/create-event`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
