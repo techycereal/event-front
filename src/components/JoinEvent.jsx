@@ -8,7 +8,7 @@ const JoinEvent = () => {
   useEffect(() => {
     const getEvents = async () => {
       try {
-        const query = await axios.get(`http://localhost:3000/api/database/all-events`);
+        const query = await axios.get(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/database/all-events`);
         console.log(query.data);
         setEvents(query.data);
       } catch (error) {

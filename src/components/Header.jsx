@@ -16,7 +16,7 @@ export default function Header() {
 
   const handleAuth = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/google/google-auth`);
+      const response = await axios.get(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/google/google-auth`);
       window.location.href = response.data.url; // Redirect user to Google auth URL
       dispatch(toggleAuth())
     } catch (error) {

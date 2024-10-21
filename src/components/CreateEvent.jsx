@@ -63,8 +63,8 @@ const CreateEvent = () => {
       if (file) {
         formData.append('image', file);
       }
-
-      const response = await axios.post(`http://localhost:3000/api/google/create-event`, formData, {
+      
+      const response = await axios.post(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/google/create-event`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
