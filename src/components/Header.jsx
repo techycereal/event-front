@@ -10,8 +10,8 @@ export default function Header() {
   console.log(authValue)
   useEffect(() => {
     const authToken = localStorage.getItem('authToken');
-    console.log(!!authToken)
-    console.log(authToken)
+    console.log('boolean', !!authToken)
+    console.log('token', authToken)
     dispatch(setAuth(!!authToken))
     setIsAuthenticated(!!authToken); // Set authentication status based on presence of authToken in local storage
   }, []);
