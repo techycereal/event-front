@@ -10,6 +10,8 @@ export default function Header() {
   console.log(authValue)
   useEffect(() => {
     const authToken = localStorage.getItem('authToken');
+    console.log(!!authToken)
+    console.log(authToken)
     dispatch(setAuth(!!authToken))
     setIsAuthenticated(!!authToken); // Set authentication status based on presence of authToken in local storage
   }, []);
@@ -17,8 +19,10 @@ export default function Header() {
   const handleAuth = async () => {
     try {
       const response = await axios.get(`https://afternoon-coast-61757-490898156666.herokuapp.com/api/google/google-auth`);
-      window.location.href = response.data.url; // Redirect user to Google auth URL
       dispatch(toggleAuth())
+      console.log(authValue)
+      window.location.href = response.data.url; // Redirect user to Google auth URL
+      console.log(authValue)
     } catch (error) {
       console.error('Error generating auth URL', error);
     }

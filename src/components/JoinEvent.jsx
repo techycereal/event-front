@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import crowd from '../assets/crowd.jpeg'
+import { useSelector } from 'react-redux';
 const JoinEvent = () => {
   const [events, setEvents] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+  const state = useSelector(state => state)
+  console.log(state)
   useEffect(() => {
     const getEvents = async () => {
       try {

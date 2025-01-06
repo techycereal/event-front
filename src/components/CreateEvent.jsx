@@ -14,10 +14,13 @@ const CreateEvent = () => {
     attendees: [],
   });
   const authValue = useSelector((state) => state.auth.isAuthenticated);
+  const state = useSelector((state) => state);
+  console.log(state)
 
   useEffect(() => {
+
     if (authValue == false) {
-      window.location.pathname = '/'
+      //window.location.pathname = '/'
     }
   }, [authValue])
 
