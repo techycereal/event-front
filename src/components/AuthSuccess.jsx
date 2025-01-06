@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setAuth } from '../features/authSlice/authSlice';
 const AuthSuccess = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
   useEffect(() => {
-    // Get the token from the URL
-    console.log('here')
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get('token');
     if (token) {

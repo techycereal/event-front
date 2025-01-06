@@ -7,7 +7,6 @@ export default function Header() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const dispatch = useDispatch();
   const authValue = useSelector((state) => state.auth.isAuthenticated);
-  console.log(authValue)
   useEffect(() => {
     const authToken = localStorage.getItem('authToken');
     console.log('boolean', !!authToken)
@@ -22,7 +21,6 @@ export default function Header() {
       dispatch(toggleAuth())
       console.log(authValue)
       window.location.href = response.data.url; // Redirect user to Google auth URL
-      console.log(authValue)
     } catch (error) {
       console.error('Error generating auth URL', error);
     }
@@ -48,7 +46,7 @@ export default function Header() {
     
     {/* Right Side: Conditional Navigation */}
     <div className="flex space-x-4">
-      {!isAuthenticated ? (
+      {!authValue ? (
         <nav onClick={handleAuth} className="text-lg font-semibold cursor-pointer hover:text-indigo-400 transition">
           Login Using Google
         </nav>
